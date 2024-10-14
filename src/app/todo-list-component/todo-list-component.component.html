@@ -1,4 +1,5 @@
 <h2>Lista de todos</h2>
+<button (click)="navigates()">Agregar</button>
 <div>
   @for (todo of todos; track todo.id) {
   <li>{{ todo.description }} -- {{ todo.priority }}</li>

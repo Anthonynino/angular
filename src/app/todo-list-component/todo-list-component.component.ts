@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoServiceService, Todo } from '../todo-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list-component',
@@ -12,7 +13,7 @@ export class TodoListComponentComponent {
 
   todos: Todo[] = []
 
-    constructor( private todoService: TodoServiceService ){
+    constructor( private todoService: TodoServiceService, private router: Router ){
 
     }
     ngOnInit(): void {
@@ -25,6 +26,10 @@ export class TodoListComponentComponent {
   
     deleteTodo(id: number) {
       this.todoService.deleteTodo(id);
+    }
+
+    navigates(){
+      this.router.navigate(['/add-todo'])
     }
 
 }
