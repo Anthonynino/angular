@@ -1,0 +1,8 @@
+<h2>Lista de todos</h2>
+<div>
+  @for (todo of todos; track todo.id) {
+  <li>{{ todo.description }} -- {{ todo.priority }}</li>
+  <button (click)="deleteTodo(todo.id)">Eliminar</button>
+  <button (click)="completeTodo(todo.id)">Completada</button>
+  }
+</div>
