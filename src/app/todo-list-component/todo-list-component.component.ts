@@ -26,6 +26,7 @@ export class TodoListComponentComponent {
   
     deleteTodo(id: number) {
       this.todoService.deleteTodo(id);
+      this.todos = this.todoService.getTodos(); // Actualizar la lista local
     }
 
     navigates(){
